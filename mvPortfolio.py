@@ -13,15 +13,15 @@ from pypfopt import risk_models
 from pypfopt import expected_returns
 
 # dados
-start = datetime.datetime(2020, 1, 1)
+start = datetime.datetime(2023, 1, 2)
 end = datetime.datetime(2023, 6, 12)
 
 petr4 = web.get_data_yahoo('PETR4.SA',start,end) 
 
 petr4.head(3) # tres primeiros
 petr4.tail(3) # tres ultimos
-petr4.loc['2019-05-20'] # cotacao em dia especifico
-petr4.loc['2019-06-01':'2019-06-30'] # cotacoes em periodo especifico
+petr4.loc['2023-05-22'] # cotacao em dia especifico
+petr4.loc['2023-06-01':'2023-06-16'] # cotacoes em periodo especifico
 
 # grafico de preco
 petr4['Adj Close'].plot()
