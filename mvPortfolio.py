@@ -14,7 +14,7 @@ from pypfopt import expected_returns
 
 # dados
 start = datetime.datetime(2023, 1, 2)
-end = datetime.datetime(2023, 6, 12)
+end = datetime.datetime(2023, 7, 7)
 
 petr4 = web.get_data_yahoo('PETR4.SA',start,end) 
 
@@ -47,7 +47,7 @@ fig = plt.figure()
 ax1 = fig.add_axes([0.1,0.1,0.8,0.8])
 ax1.plot(petr4_monthly_returns)
 ax1.set_xlabel("Date")
-ax1.set_ylabel("Percent")
+ax1.set_ylabel("Percent")  
 ax1.set_title("PETR4 monthly returns data")
 plt.show()
 
@@ -69,7 +69,7 @@ multpl_stocks = web.get_data_yahoo(tickers, start = start, end = end)
 multpl_stock_daily_returns = multpl_stocks['Adj Close'].pct_change()
 multpl_stock_monthly_returns = multpl_stocks['Adj Close'].resample('M').ffill().pct_change()
 
-fig = plt.figure()
+fig =   plt.figure()
 (multpl_stock_monthly_returns + 1).cumprod().plot()
 plt.show()
 
